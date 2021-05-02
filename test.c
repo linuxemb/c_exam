@@ -9,29 +9,45 @@ void passStr (char str[])
 }
 // find the frequence of a char in string 
 
-
-
+// 2 Remove all char in string except alphabet
 int main()
 {
     char str[120];   
 
-    char chVar;
-    int freq =0;
-    
-    printf( "Write down your string\n");
+   
+    int k, i;
+    printf( "Write down your stringaaaaa===\n");
     fgets(str, sizeof(str), stdin);
-    // gets(str);
-    printf("write down the char you want ot find hte freq of :");
-    scanf("%c", &chVar);
-   // passStr(str);
-    for (int i=0; str[i]!='\0' ; ++i)
-      //if substr(str, chVar)
+ 
+    for ( i=0; str[i]!='\0' ; ++i)
+     
       {
-          if (chVar == str[i])
-               ++freq;
-      }
-    printf("The frequency of %c is %d \n", chVar, freq);
+        
+            while (!((str[i] >='a' && str[i] <= 'z') || (str[i] >='A' && str[i] <'Z') || str[i]=='\0'))
+            {
+                //remove str [i] shaffle
+                int k =i;
+                while( str[k] != '\0')
+                {
+                str[k] = str[k+1]; 
+                k++;
+                }
+                // way 2
+                // for ( k =i; str[k] !='\0'; ++k)
+                // {
+                //     str[k] = str [k+1];
+                // }
+                // str[k]='\0';
 
+            }
+
+      }
+  //  printf("The frequency of %c is %d \n", chVar, freq);
+        printf("The string without char iand with alphbe on yf====== \n" );
+
+        puts(str);
+        printf("\n");
+        
     return 0;
 
 
